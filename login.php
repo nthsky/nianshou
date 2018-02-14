@@ -12,6 +12,7 @@
 		<input type="submit" name="submit" value="提交">
 		
 
-	</form>
+	</form><br>
+	<a href="./clean_cookie.php">如不行点这里</a>
 </body>
 </html>

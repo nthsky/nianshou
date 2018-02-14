@@ -59,8 +59,9 @@ function bangzhu($tel){
         $shangxian = $shangxian.$v[3];
       }
     }
-    $res_str = "成功帮助：".$chenggong."<br>已经帮助过：".$yijing."<br>已经到达上限：".$shangxian;
-    echo $res_str;
+    header("Content-type: text/html; charset=utf-8");
+    $res = "成功帮助：".$chenggong."<br>已经帮助过：".$yijing."<br>已经到达上限：".$shangxian;
+    echo $res;
 
 }
 

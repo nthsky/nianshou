@@ -21,5 +21,18 @@ include_once("./mysql.php");
 // $sql = "insert into member (tel,auth,nickname) values ($tel,'$auth','$nickname')";
 // $res = $link->add($sql);
 // dump($res);
-bangzhu(123);
+// bangzhu(123);
+$auth = '3XpVDZx0DM3AzN2EyNfZmbjl2ah5Wb9UL6rWJ6dC';
+$url = "https://event.bh3.com/bh3_2018spring_festival/friends.php?auth=".$auth;
+$response = https_request($url,false,null,true);
+$response = json_decode($response);
+$nickname = $response->data->user->nickname;
+dump($nickname);
+$link = new Mysql();
+$tel = 1234;
+
+	$sql = "insert into member (tel,auth,nickname) values ($tel,'$auth','$nickname')";
+	$res = $link->add($sql);
+
+
  ?>

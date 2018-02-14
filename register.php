@@ -8,7 +8,7 @@
 </head>
 <body>
 	<form action="./yanzheng.php" method="post">
-		auth:<input type="text" name="auth" id="auth"><br>
+		auth:<input type="text" name="auth" id="auth">auth扫自己的二维码，浏览器地址栏获取<br>
 		手机:<input type="text" name="tel" id="tel">
 		<button id='shouji' type='button'>发送验证码</button><br>
 		验证码:<input type="text" name="validate"><br>

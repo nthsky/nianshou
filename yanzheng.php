@@ -1,15 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<title>Powered by 云淡风轻</title>
-</head>
-<body>
-	
-</body>
-</html>
 <?php 
-
+header("Content-type: text/html; charset=utf-8");
 // var_dump($_POST);
 include_once('./functions.php');
 include_once('./mysql.php');
@@ -69,6 +59,7 @@ if(!$data){
 // 	'sign'=>$sign
 // ];
 // $response = https_request($url,true,$data,true,$cookie_file);
+
 bangzhu($tel);
 
  ?>
