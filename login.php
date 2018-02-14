@@ -5,14 +5,16 @@
 	<title>Powered by 云淡风轻</title>
 </head>
 <body>
-	<div>已经登陆过，只需输入手机</div><br>
-	<form action="./already_login.php" method="post">
-		
-		手机:<input type="text" name="tel" id="tel"><br>
-		<input type="submit" name="submit" value="提交">
-		
-
-	</form><br>
-	<a href="./clean_cookie.php">如不行点这里</a>
+	<a href="./clean_cookie.php">如不行点这里</a><br>
 </body>
 </html>
+<?php 
+
+include_once("./functions.php");
+$tel = $_COOKIE['phone'];
+bangzhu($tel);
+
+
+
+
+ ?>

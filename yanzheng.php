@@ -34,7 +34,7 @@ if($response->retcode !== 0){
 
 // 保存本地cookie，方便下一次
 $time = time()+60*60*24*30;
-setcookie('tel',$tel,$time);
+setcookie('phone',$tel,$time);
 
 // 获取nickname
 

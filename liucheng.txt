@@ -1,8 +1,14 @@
 
 第一次
-1.输入auth tel 获取验证码
+1.register.php  输入auth tel 获取验证码
 
-2.发送验证码，获取cookie，数据库存入tel auth 
+2.发送验证码，获取cookie 写入./cookies/tel.txt
     get nickname   数据库存入tel auth nickname
+    cookie存入tel
+3.判断state 0可以点 1上限 2帮助过
+4.携带cookie发送点击
 
-3.携带cookie发送点击
+以后
+判断$_COOKIE['tel']
+存在携带./cookies/tel.txt 发送点击
+

@@ -25,7 +25,7 @@
 //  $output = https_request('https://event.bh3.com/bh3_2018spring_festival/friends.php?auth=3XpVDZx0TM5cTMyYSNfZmbjl2ah5Wb9UZ5kiZ5kiZ5kiZ5kiZ5kiZ5kiZ5kiZ5ki',$data);
  
 //  var_dump(json_decode($output,true));
-if($_COOKIE['tel']){
+if($_COOKIE['phone']){
 	header('Location:login.php');
 }else{
 	header('Location:register.php');
