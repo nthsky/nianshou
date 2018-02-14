@@ -1,6 +1,6 @@
 <?php 
 
-setcookie('tel',null);
+setcookie('phone',null);
 
 header('Location:index.php');
 
