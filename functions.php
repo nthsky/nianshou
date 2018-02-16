@@ -8,7 +8,7 @@
     curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, FALSE);
     curl_setopt($curl, CURLOPT_SSL_VERIFYHOST, FALSE);
 
-    curl_setopt($curl, CURLOPT_COOKIE, 'SERVERID=9da578c0b665d0cc9f7c94ba4695a61e|1518427407|1518427335;bh3_2018spring=3XlRDbx0zNyYTM5EDO2UQO%3D%3D;sign_event=0086097e73fd84a8cac04ac1111ec8da2e0e58a52ca0b4dd0a93bf503a6e6402;');
+//    curl_setopt($curl, CURLOPT_COOKIE, 'SERVERID=9da578c0b665d0cc9f7c94ba4695a61e|1518427407|1518427335;bh3_2018spring=3XlRDbx0zNyYTM5EDO2UQO%3D%3D;sign_event=0086097e73fd84a8cac04ac1111ec8da2e0e58a52ca0b4dd0a93bf503a6e6402;');
     if($post){
       if (!empty($data)) { //数组不为空的时候传参 
           curl_setopt($curl, CURLOPT_POST, 1); //POST 开启 
@@ -52,11 +52,11 @@ function bangzhu($tel){
       $response = https_request($url,true,$data,true,$cookie_file);
       $response = json_decode($response);
       if($response->retcode == 0){
-        $chenggong =$chenggong.$v[2];
+        $chenggong =$chenggong.$v[2].",";
       }elseif($response->retcode == 1) {
-        $yijing = $yijing.$v[2];
+        $yijing = $yijing.$v[2].",";
       }elseif($response->retcode == 2){
-        $shangxian = $shangxian.$v[3];
+        $shangxian = $shangxian.$v[3].",";
       }
     }
     header("Content-type: text/html; charset=utf-8");

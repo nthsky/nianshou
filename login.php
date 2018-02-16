@@ -5,7 +5,7 @@
 	<title>Powered by 云淡风轻</title>
 </head>
 <body>
-	<a href="./clean_cookie.php">如不行点这里</a><br>
+	<a href="./clean_cookie.php">如不行点这里重新注册</a><br>
 </body>
 </html>
 <?php 
