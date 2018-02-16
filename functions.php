@@ -1,7 +1,7 @@
 <?php 
 
 // 有cookie true 无cooie false
- function https_request($url, $post=true , $data = null ,$cookie = true, $cookie_file='./cookies/cookie_file.txt')
+ function https_request($url, $post=true , $data = null , $cookie_file)
  {
     $curl = curl_init();
     curl_setopt($curl, CURLOPT_URL, $url);
@@ -16,9 +16,7 @@
       } 
     }
     curl_setopt($curl, CURLOPT_COOKIEJAR, $cookie_file);
-    if($cookie){
-      curl_setopt($curl, CURLOPT_COOKIEFILE, $cookie_file);
-    }
+    curl_setopt($curl, CURLOPT_COOKIEFILE, $cookie_file);
     curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
     $output = curl_exec($curl);
     curl_close($curl);
@@ -49,19 +47,22 @@ function bangzhu($tel){
           'auth'=>$v[1],
           'sign'=>''
       ];
-      $response = https_request($url,true,$data,true,$cookie_file);
+      $response = https_request($url,true,$data,$cookie_file);
       $response = json_decode($response);
       if($response->retcode == 0){
-        $chenggong =$chenggong.$v[2].",";
+        $chenggong =$chenggong.$v[2].":".$response->msg."，礼物:".$response->data."<br>";
       }elseif($response->retcode == 1) {
-        $yijing = $yijing.$v[2].",";
+        $yijing = $yijing.$v[2].":".$response->msg."<br>";
       }elseif($response->retcode == 2){
-        $shangxian = $shangxian.$v[3].",";
+        $shangxian = $shangxian.$v[2].":".$response->msg."<br>";
       }
     }
-    header("Content-type: text/html; charset=utf-8");
-    $res = "成功帮助：".$chenggong."<br>已经帮助过：".$yijing."<br>已经到达上限：".$shangxian;
-    echo $res;
+
+    echo $chenggong;
+    echo "<hr>";
+    echo $yijing;
+    echo "<hr>";
+    echo $shangxian;
 
 }
 

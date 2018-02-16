@@ -1,5 +1,4 @@
 <?php 
-header("Content-type: text/html; charset=utf-8");
 // var_dump($_POST);
 include_once('./functions.php');
 include_once('./mysql.php');
@@ -23,7 +22,7 @@ $cookie_file = "./cookies/".$data['tel'].".txt";
 
 $url = "https://event.bh3.com/bh3_2018spring_festival/identify.php";
 // $data = "auth=".$auth."&sign=&code=".$validate."&tel=".$tel;
-$response = https_request($url,true,$data,true,$cookie_file);
+$response = https_request($url,true,$data,$cookie_file);
 $response = json_decode($response);
 // 验证失败
 if($response->retcode !== 0){
@@ -39,7 +38,7 @@ setcookie('phone',$tel,$time);
 // 获取nickname
 
 $url = "https://event.bh3.com/bh3_2018spring_festival/friends.php?auth=".$auth;
-$response = https_request($url,false,null,true,$cookie_file);
+$response = https_request($url,false,null,$cookie_file);
 $response = json_decode($response);
 $nickname = $response->data->user->nickname;
 
@@ -52,7 +51,7 @@ if(!$data){
 	$res = $link->add($sql);
 }
 
-
+header('Location:login.php');
 // $url = "https://event.bh3.com/bh3_2018spring_festival/friends.php";
 // $data = [
 // 	'auth'=>$auth,
@@ -60,6 +59,6 @@ if(!$data){
 // ];
 // $response = https_request($url,true,$data,true,$cookie_file);
 
-bangzhu($tel);
+// bangzhu($tel);
 
  ?>
