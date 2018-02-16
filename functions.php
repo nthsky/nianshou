@@ -50,19 +50,23 @@ function bangzhu($tel){
       $response = https_request($url,true,$data,$cookie_file);
       $response = json_decode($response);
       if($response->retcode == 0){
-        $chenggong =$chenggong.$v[2].":".$response->msg."，礼物:".$response->data."<br>";
+        $chenggong =$chenggong.$v[2].":".$response->msg."，礼物:".$response->data."<br>\r\n";
       }elseif($response->retcode == 1) {
-        $yijing = $yijing.$v[2].":".$response->msg."<br>";
+        $yijing = $yijing.$v[2].":".$response->msg."<br>\r\n";
       }elseif($response->retcode == 2){
-        $shangxian = $shangxian.$v[2].":".$response->msg."<br>";
+        $shangxian = $shangxian.$v[2].":".$response->msg."<br>\r\n";
       }
     }
 
-    echo $chenggong;
-    echo "<hr>";
-    echo $yijing;
-    echo "<hr>";
-    echo $shangxian;
+
+    // echo $chenggong;
+    // echo "<hr>";
+    // echo $yijing;
+    // echo "<hr>";
+    // echo $shangxian;
+
+    $log = $chenggong."\r\n<hr>\r\n".$yijing."\r\n<hr>\r\n".$shangxian;
+    return $log;
 
 }
 

@@ -38,6 +38,12 @@ class Mysql{
 		$res = $this->link->query($sql);
 		return $res;
 	}
+
+	public function chaxun($sql)
+	{
+		$res = $this->link->query($sql);
+		return $res->fetch_assoc();
+	}
 }
 
  ?>

@@ -22,17 +22,26 @@ include_once("./mysql.php");
 // $res = $link->add($sql);
 // dump($res);
 // bangzhu(123);
-$auth = '3XpVDZx0DM3AzN2EyNfZmbjl2ah5Wb9UL6rWJ6dC';
-$url = "https://event.bh3.com/bh3_2018spring_festival/friends.php?auth=".$auth;
-$response = https_request($url,false,null,true);
-$response = json_decode($response);
-$nickname = $response->data->user->nickname;
-dump($nickname);
-$link = new Mysql();
-$tel = 1234;
+// $auth = '3XpVDZx0DM3AzN2EyNfZmbjl2ah5Wb9UL6rWJ6dC';
+// $url = "https://event.bh3.com/bh3_2018spring_festival/friends.php?auth=".$auth;
+// $response = https_request($url,false,null,true);
+// $response = json_decode($response);
+// $nickname = $response->data->user->nickname;
+// dump($nickname);
+$link = new mysqli('127.0.0.1','root','root','nianshou');
+// $tel = 1234;
 
-	$sql = "insert into member (tel,auth,nickname) values ($tel,'$auth','$nickname')";
-	$res = $link->add($sql);
+// 	$sql = "insert into member (tel,auth,nickname) values ($tel,'$auth','$nickname')";
+// 	$res = $link->add($sql);
+// echo date('YmdHis',time());
+$sql = "select tel,nickname from member";
 
+$res = $link->query($sql);
+// while($data = $res->fetch_assoc()){
+// 	echo $data['nickname'];
+// }
+for($i=0;$i<5;$i++){
+	echo $res->fetch_assoc()['nickname'];
+}
 
  ?>

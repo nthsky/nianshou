@@ -12,7 +12,8 @@
 
 include_once("./functions.php");
 $tel = $_COOKIE['phone'];
-bangzhu($tel);
+$data = bangzhu($tel);
+echo $data;
 
 
 
