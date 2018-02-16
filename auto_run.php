@@ -25,5 +25,5 @@ for($i=0; $i<7; $i++){
 $filename = "./logs/".date('YmdHis',time()).".txt";
 file_put_contents($filename, $log, FILE_APPEND);
 
-
+echo $log;
  ?>
