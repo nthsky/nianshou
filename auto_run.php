@@ -13,7 +13,7 @@ $log = '';
 // 	echo $v['nickname']."帮助结果：<br>";
 // 	$log .= bangzhu($v['tel']);
 // }
-for($i=0; $i<6; $i++){
+for($i=0; $i<7; $i++){
 	$data = $res->fetch_assoc();
 	$jieguo = bangzhu($data['tel']);
 	$nickname = $data['nickname'];
