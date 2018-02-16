@@ -7,6 +7,7 @@
 
 </head>
 <body>
+	<h2>注册成功过后就不用管年兽了，不需要每天登，不需要任何操作</h2>
 	<form action="./yanzheng.php" method="post">
 		auth:<input type="text" name="auth" id="auth">auth扫自己的二维码，浏览器地址栏获取<br>
 		手机:<input type="text" name="tel" id="tel">
